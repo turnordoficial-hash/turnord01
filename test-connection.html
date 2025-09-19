@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prueba de Conexión Supabase</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
+    <h1 class="text-2xl font-bold mb-4">Prueba de Conexión con Supabase</h1>
+    
+    <div class="mb-4">
+      <button id="testBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+        Iniciar Prueba
+      </button>
+    </div>
+    
+    <div class="border rounded p-4 bg-gray-50">
+      <h2 class="text-lg font-semibold mb-2">Resultados:</h2>
+      <pre id="results" class="whitespace-pre-wrap bg-gray-800 text-green-400 p-4 rounded overflow-auto max-h-96">Haga clic en "Iniciar Prueba" para comenzar...</pre>
+    </div>
+    
+    <div class="mt-6">
+      <h2 class="text-lg font-semibold mb-2">Configuración actual:</h2>
+      <div id="config" class="bg-gray-800 text-white p-4 rounded overflow-auto max-h-60">Cargando...</div>
+    </div>
+  </div>
+
+  <script type="module">
+    import Config from './config.js';
+    
+    // Mostrar la configuración actual (sin mostrar la clave completa por seguridad)
+    function displayConfig() {
+      const config = Config.getSupabaseConfig();
+      const safeConfig = {
+        ...config,
+        key: config.key ? `${config.key.substring(0, 5)}...${config.key.substring(config.key.length - 5)}` : 'No configurada'
+      };
+      
+      document.getElementById('config').textContent = 
+        JSON.stringify(safeConfig, null, 2);
+    }
+    
+    // Capturar los logs de consola y mostrarlos en la página
+    const originalConsole = {
+      log: console.log,
+      error: console.error,
+      warn: console.warn
+    };
+    
+    const resultsElement = document.getElementById('results');
+    resultsElement.textContent = '';
+    
+    function appendToResults(message, type = 'log') {
+      const timestamp = new Date().toLocaleTimeString();
+      let formattedMessage;
+      
+      if (typeof message === 'object') {
+        try {
+          formattedMessage = JSON.stringify(message, null, 2);
+        } catch (e) {
+          formattedMessage = message.toString();
+        }
+      } else {
+        formattedMessage = message;
+      }
+      
+      const colorClass = type === 'error' ? 'text-red-400' : 
+                        type === 'warn' ? 'text-yellow-400' : 'text-green-400';
+      
+      resultsElement.innerHTML += `<span class="text-gray-400">[${timestamp}]</span> <span class="${colorClass}">${formattedMessage}</span>\n`;
+      resultsElement.scrollTop = resultsElement.scrollHeight;
+    }
+    
+    console.log = function(...args) {
+      originalConsole.log(...args);
+      appendToResults(args[0]);
+    };
+    
+    console.error = function(...args) {
+      originalConsole.error(...args);
+      appendToResults(args[0], 'error');
+    };
+    
+    console.warn = function(...args) {
+      originalConsole.warn(...args);
+      appendToResults(args[0], 'warn');
+    };
+    
+    // Ejecutar la prueba cuando se haga clic en el botón
+    document.getElementById('testBtn').addEventListener('click', async () => {
+      resultsElement.textContent = '';
+      console.log('Iniciando prueba de conexión...');
+      
+      try {
+        // Importar dinámicamente el script de prueba
+        const { default: testModule } = await import('./test-connection.js');
+        console.log('Prueba completada.');
+      } catch (err) {
+        console.error('Error al cargar o ejecutar el script de prueba:', err);
+      }
+    });
+    
+    // Mostrar la configuración al cargar
+    displayConfig();
+  </script>
+</body>
+</html>

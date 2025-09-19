@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Notificaciones - TurnoRD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body data-negocio-id="barberia006" class="bg-gray-100 p-8">
+    <div class="max-w-md mx-auto bg-white rounded-lg shadow-lg p-6">
+        <h1 class="text-2xl font-bold text-center mb-6">Prueba de Notificaciones</h1>
+        
+        <div class="space-y-4">
+            <button id="requestPermission" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+                Solicitar Permisos
+            </button>
+            
+            <button id="testNewClient" class="w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">
+                Probar: Nuevo Cliente
+            </button>
+            
+            <button id="testClientTurn" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded">
+                Probar: Es tu turno
+            </button>
+            
+            <button id="testServiceCompleted" class="w-full bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded">
+                Probar: Servicio completado
+            </button>
+            
+            <div id="status" class="text-center text-sm text-gray-600 mt-4"></div>
+        </div>
+    </div>
+
+    <script src="notifications.js"></script>
+    <script>
+        const statusEl = document.getElementById('status');
+        
+        function updateStatus() {
+            const permission = Notification.permission;
+            const enabled = window.notificationSystem.isNotificationEnabled();
+            statusEl.textContent = `Permisos: ${permission} | Habilitado: ${enabled}`;
+        }
+        
+        // Actualizar estado inicial
+        updateStatus();
+        
+        // Botón para solicitar permisos
+        document.getElementById('requestPermission').addEventListener('click', async () => {
+            await window.notificationSystem.requestPermission();
+            updateStatus();
+        });
+        
+        // Botón para probar nuevo cliente
+        document.getElementById('testNewClient').addEventListener('click', () => {
+            window.notificationSystem.notifyBarberNewClient('Juan Pérez', 'Corte de cabello', 3);
+        });
+        
+        // Botón para probar turno del cliente
+        document.getElementById('testClientTurn').addEventListener('click', () => {
+            window.notificationSystem.notifyClientTurn('María García', 1);
+        });
+        
+        // Botón para probar servicio completado
+        document.getElementById('testServiceCompleted').addEventListener('click', () => {
+            window.notificationSystem.notifyServiceCompleted('Carlos López', 'Afeitado');
+        });
+    </script>
+</body>
+</html>

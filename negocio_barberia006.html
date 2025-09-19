@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="./">
+  <title>Configuración del Negocio - TurnoRD</title>
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+  <link rel="manifest" href="./assets/site.webmanifest">
+  <script src="./assets/tailwind.js"></script>
+  <script src="./assets/theme.js"></script>
+  <link rel="stylesheet" href="./assets/styles.css">
+  <style>
+    .sidebar-link {
+      @apply flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors;
+    }
+    .sidebar-link.active {
+      @apply bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border-r-4 border-primary-600;
+    }
+    .sidebar-link svg {
+      @apply w-5 h-5 mr-3;
+    }
+  </style>
+</head>
+<body data-negocio-id="barberia006" class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white dark:bg-gray-800 shadow-lg transition-colors">
+      <div class="p-6">
+        <div class="flex items-center mb-8">
+          <div class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <div>
+            <h1 class="text-xl font-bold text-gray-900 dark:text-white">TurnoRD</h1>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Panel Admin</p>
+          </div>
+        </div>
+
+        <nav class="space-y-2">
+          <a href="panel_barberia006.html" class="sidebar-link">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5a2 2 0 012-2h4a2 2 0 012 2v0H8v0z" />
+            </svg>
+            Panel Principal
+          </a>
+          <a href="turno_barberia006.html" class="sidebar-link">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Gestión de Turnos
+          </a>
+          <a href="negocio_barberia006.html" class="sidebar-link active">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+            Configuración
+          </a>
+          <a href="usuario_barberia006.html" class="sidebar-link">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+            Usuarios
+          </a>
+          <a href="cierre_barberia006.html" class="sidebar-link">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+            Cierre de Caja
+          </a>
+        </nav>
+      </div>
+
+      <!-- Theme Toggle -->
+      <div class="absolute bottom-4 left-4 right-4">
+        <button id="theme-toggle" class="w-full flex items-center justify-center px-4 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors">
+          <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+          </svg>
+          <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 2L13.09 8.26L20 9L14 14.74L15.18 21.02L10 17.77L4.82 21.02L6 14.74L0 9L6.91 8.26L10 2Z"></path>
+          </svg>
+          <span class="ml-2 text-sm font-medium">Cambiar tema</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col">
+      <!-- Header -->
+      <header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 transition-colors">
+        <div class="px-6 py-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Configuración del Negocio</h1>
+              <p class="text-gray-600 dark:text-gray-400">Gestiona la configuración, horarios y servicios</p>
+            </div>
+            <div class="flex items-center space-x-4">
+              <div class="text-right">
+                <p class="text-sm font-medium text-gray-900 dark:text-white">Administrador</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">barberia006</p>
+              </div>
+              <div class="w-8 h-8 bg-primary-600 rounded-full flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <main class="flex-1 p-6 space-y-8">
+        <!-- Resumen de ingresos -->
+        <section class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-colors">
+          <h2 class="text-2xl font-bold mb-6 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+            </svg>
+            Resumen de Ingresos
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-gradient-to-r from-green-500 to-green-600 p-6 rounded-lg text-white">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-green-100 text-sm font-medium">Hoy</p>
+                  <p id="ingresos-hoy" class="text-2xl font-bold">RD$ 0.00</p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-500 to-blue-600 p-6 rounded-lg text-white">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-blue-100 text-sm font-medium">Esta Semana</p>
+                  <p id="ingresos-semana" class="text-2xl font-bold">RD$ 0.00</p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 00-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-purple-500 to-purple-600 p-6 rounded-lg text-white">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-purple-100 text-sm font-medium">Este Mes</p>
+                  <p id="ingresos-mes" class="text-2xl font-bold">RD$ 0.00</p>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Configuración de horario -->
+        <section class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-colors">
+          <h2 class="text-2xl font-bold mb-6 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Configuración de Horario
+          </h2>
+
+          <form id="form-horario" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div>
+                <label class="block font-medium mb-2 text-gray-700 dark:text-gray-300">Hora de Apertura:</label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <input type="time" id="hora-apertura" class="w-full pl-10 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 px-3 py-2 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" value="08:00" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-medium mb-2 text-gray-700 dark:text-gray-300">Hora de Cierre:</label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <input type="time" id="hora-cierre" class="w-full pl-10 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 px-3 py-2 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" value="18:00" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-medium mb-2 text-gray-700 dark:text-gray-300">Duración por Turno (min):</label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <input type="number" id="duracion-turno" class="w-full pl-10 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 px-3 py-2 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" value="30" min="15" max="120" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block font-medium mb-2 text-gray-700 dark:text-gray-300">Días de Trabajo:</label>
+                <div class="space-y-2">
+                  <label class="inline-flex items-center mr-4">
+                    <input type="checkbox" id="lunes" class="form-checkbox" checked />
+                    <span class="ml-2 text-sm">Lun</span>
+                  </label>
+                  <label class="inline-flex items-center mr-4">
+                    <input type="checkbox" id="martes" class="form-checkbox" checked />
+                    <span class="ml-2 text-sm">Mar</span>
+                  </label>
+                  <label class="inline-flex items-center mr-4">
+                    <input type="checkbox" id="miercoles" class="form-checkbox" checked />
+                    <span class="ml-2 text-sm">Mié</span>
+                  </label>
+                  <label class="inline-flex items-center mr-4">
+                    <input type="checkbox" id="jueves" class="form-checkbox" checked />
+                    <span class="ml-2 text-sm">Jue</span>
+                  </label>
+                  <label class="inline-flex items-center mr-4">
+                    <input type="checkbox" id="viernes" class="form-checkbox" checked />
+                    <span class="ml-2 text-sm">Vie</span>
+                  </label>
+                  <label class="inline-flex items-center mr-4">
+                    <input type="checkbox" id="sabado" class="form-checkbox" checked />
+                    <span class="ml-2 text-sm">Sáb</span>
+                  </label>
+                  <label class="inline-flex items-center">
+                    <input type="checkbox" id="domingo" class="form-checkbox" />
+                    <span class="ml-2 text-sm">Dom</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-end">
+              <button type="submit" class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 text-white px-6 py-3 rounded-lg transition-colors flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Guardar Configuración
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Control de Break -->
+        <section class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-colors">
+          <h2 class="text-2xl font-bold mb-6 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-orange-600 dark:text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Control de Break
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Estado actual del break -->
+            <div class="space-y-4">
+              <div class="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+                <h3 class="text-lg font-semibold mb-3 text-gray-700 dark:text-gray-300">Estado Actual</h3>
+                <div id="break-status" class="flex items-center space-x-3">
+                  <div id="break-indicator" class="w-3 h-3 rounded-full bg-green-500"></div>
+                  <span id="break-text" class="font-medium text-green-600 dark:text-green-400">Negocio Abierto</span>
+                </div>
+                <div id="break-time-remaining" class="mt-2 text-sm text-gray-600 dark:text-gray-400 hidden">
+                  Tiempo restante: <span id="remaining-time">--:--</span>
+                </div>
+              </div>
+
+              <!-- Botón principal de break -->
+              <button id="toggle-break" class="w-full bg-orange-600 hover:bg-orange-700 dark:bg-orange-700 dark:hover:bg-orange-800 text-white px-6 py-3 rounded-lg transition-colors flex items-center justify-center font-semibold">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span id="break-button-text">Iniciar Break</span>
+              </button>
+            </div>
+
+            <!-- Configuración del break -->
+            <div class="space-y-4">
+              <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-300">Configuración de Break</h3>
+
+              <div class="relative">
+                <label class="block font-medium mb-2 text-gray-700 dark:text-gray-300">Duración del break (minutos):</label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <input type="number" id="break-duration" class="w-full pl-10 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 px-3 py-2 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors" value="30" min="5" max="180" />
+                </div>
+              </div>
+
+              <div class="relative">
+                <label class="block font-medium mb-2 text-gray-700 dark:text-gray-300">Mensaje personalizado:</label>
+                <textarea id="break-message" class="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 px-3 py-2 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors" rows="3" placeholder="Estamos en break, regresamos pronto...">Estamos en break, regresamos pronto...</textarea>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Servicios del negocio -->
+        <section class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md transition-colors">
+          <h2 class="text-2xl font-bold mb-6 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h10a2 2 0 012 2v14a2 2 0 01-2 2z" />
+            </svg>
+            Servicios (activos)
+          </h2>
+
+          <!-- Formulario de nuevo servicio -->
+          <form id="form-servicio" class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+            <div>
+              <label class="block font-medium mb-1 text-gray-700 dark:text-gray-300">Nombre</label>
+              <input id="svc-nombre" type="text" required maxlength="60" class="w-full border dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 px-3 py-2 rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="Ej: Corte de cabello" />
+            </div>
+            <div>
+              <label class="block font-medium mb-1 text-gray-700 dark:text-gray-300">Duración (min)</label>
+              <input id="svc-duracion" type="number" required min="1" max="240" class="w-full border dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 px-3 py-2 rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="20" />
+            </div>
+            <div>
+              <label class="block font-medium mb-1 text-gray-700 dark:text-gray-300">Precio (RD$)</label>
+              <input id="svc-precio" type="number" step="0.01" min="0" class="w-full border dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 px-3 py-2 rounded-lg focus:ring-2 focus:ring-blue-500" placeholder="0.00" />
+            </div>
+            <div class="flex items-end gap-3">
+              <label class="inline-flex items-center mr-3">
+                <input id="svc-activo" type="checkbox" class="mr-2" checked /> Activo
+              </label>
+              <button id="btn-agregar-servicio" type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+                Agregar
+              </button>
+            </div>
+          </form>
+
+          <!-- Tabla de servicios -->
+          <div class="overflow-x-auto">
+            <table class="min-w-full text-left border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+              <thead class="bg-gray-50 dark:bg-gray-700">
+                <tr>
+                  <th class="py-3 px-4 border-b dark:border-gray-600">Nombre</th>
+                  <th class="py-3 px-4 border-b dark:border-gray-600">Duración (min)</th>
+                  <th class="py-3 px-4 border-b dark:border-gray-600">Precio</th>
+                  <th class="py-3 px-4 border-b dark:border-gray-600">Activo</th>
+                  <th class="py-3 px-4 border-b dark:border-gray-600">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="tabla-servicios" class="divide-y divide-gray-200 dark:divide-gray-700"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+
+      <footer class="bg-primary-700 dark:bg-primary-700 text-white text-center text-sm py-6 mt-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            © 2025 TurnoRD Todos los derechos reservados • Hecho por <strong>LUIS ALFREDO CABRERA REYES</strong>
+          </div>
+          <div class="flex space-x-4">
+            <a href="#" class="text-white hover:text-blue-300 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-white hover:text-blue-300 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-white hover:text-blue-300 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+  <script type="module" src="./admin/negocio.js"></script>
+  <script type="module">
+    import { supabase } from './database.js';
+    const negocioId = 'barberia006';
+    (async () => {
+      try {
+        const { data } = await supabase
+          .from('configuracion_negocio')
+          .select('theme_primary, theme_mode')
+          .eq('negocio_id', negocioId)
+          .maybeSingle();
+        if (data) {
+          if (data.theme_primary) localStorage.setItem('theme_primary', data.theme_primary);
+          if (data.theme_mode) localStorage.setItem('theme_mode', data.theme_mode);
+          if (window.theme && window.theme.apply) {
+            window.theme.apply(
+              data.theme_primary || localStorage.getItem('theme_primary') || 'blue',
+              data.theme_mode || localStorage.getItem('theme_mode') || 'light'
+            );
+          }
+        }
+      } catch (e) {
+        console.warn('No se pudo sincronizar tema desde DB', e);
+      }
+    })();
+
+    async function cargarServicios() {
+      const { data, error } = await supabase
+        .from('servicios')
+        .select('id,nombre,duracion_min,precio,activo')
+        .eq('negocio_id', negocioId)
+        .order('activo', { ascending: false })
+        .order('nombre', { ascending: true });
+      if (error) {
+        console.error('Error cargando servicios:', error.message);
+        return;
+      }
+      const tbody = document.getElementById('tabla-servicios');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+      const esc = (v) => String(v == null ? '' : v).replace(/[&<>"]/g, (m) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+      (data || []).forEach(s => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="py-2 px-4"><input class="svc-nombre w-full rounded border dark:border-gray-600 dark:bg-gray-700 dark:text-white px-2 py-1" value="${esc(s.nombre)}"></td>
+          <td class="py-2 px-4"><input type="number" min="1" max="240" class="svc-duracion w-24 rounded border dark:border-gray-600 dark:bg-gray-700 dark:text-white px-2 py-1" value="${s.duracion_min != null ? s.duracion_min : 25}"></td>
+          <td class="py-2 px-4"><input type="number" step="0.01" min="0" class="svc-precio w-28 rounded border dark:border-gray-600 dark:bg-gray-700 dark:text-white px-2 py-1" value="${Number(s.precio || 0).toFixed(2)}"></td>
+          <td class="py-2 px-4"><input type="checkbox" class="svc-activo" ${s.activo ? 'checked' : ''}></td>
+          <td class="py-2 px-4 flex gap-2">
+            <button class="btn-guardar bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded">Guardar</button>
+            <button class="btn-eliminar bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded">Eliminar</button>
+          </td>
+        `;
+        tr.dataset.id = s.id;
+        tbody.appendChild(tr);
+      });
+    }
+
+    async function agregarServicio(e) {
+      e.preventDefault();
+      const nombre = document.getElementById('svc-nombre').value.trim();
+      const dur = parseInt(document.getElementById('svc-duracion').value, 10);
+      const precio = parseFloat(document.getElementById('svc-precio').value || '0');
+      const activo = document.getElementById('svc-activo').checked;
+      if (!nombre || !dur || dur < 1) return;
+      const { error } = await supabase
+        .from('servicios')
+        .insert([{ negocio_id: negocioId, nombre, duracion_min: dur, precio, activo }]);
+      if (error) {
+        alert('Error al agregar servicio: ' + error.message);
+        return;
+      }
+      e.target.reset();
+      document.getElementById('svc-activo').checked = true;
+      await cargarServicios();
+    }
+
+    async function actualizarServicio(id, payload) {
+      const { error } = await supabase
+        .from('servicios')
+        .update(payload)
+        .eq('id', id);
+      if (error) throw new Error(error.message);
+    }
+
+    async function eliminarServicio(id) {
+      const { error } = await supabase
+        .from('servicios')
+        .delete()
+        .eq('id', id);
+      if (error) throw new Error(error.message);
+    }
+
+    // Delegación de eventos para la tabla
+    document.getElementById('tabla-servicios').addEventListener('click', async (e) => {
+      const row = e.target.closest('tr');
+      if (!row) return;
+      const id = row.dataset.id;
+      if (e.target.classList.contains('btn-guardar')) {
+        const nombre = row.querySelector('.svc-nombre').value.trim();
+        const dur = parseInt(row.querySelector('.svc-duracion').value, 10);
+        const precio = parseFloat(row.querySelector('.svc-precio').value || '0');
+        const activo = row.querySelector('.svc-activo').checked;
+        try {
+          await actualizarServicio(id, { nombre, duracion_min: dur, precio, activo });
+          alert('Servicio actualizado');
+        } catch (err) {
+          alert('Error al actualizar: ' + err.message);
+        }
+      }
+      if (e.target.classList.contains('btn-eliminar')) {
+        if (!confirm('¿Eliminar este servicio?')) return;
+        try {
+          await eliminarServicio(id);
+          row.remove();
+        } catch (err) {
+          alert('Error al eliminar: ' + err.message);
+        }
+      }
+    });
+
+    document.getElementById('form-servicio').addEventListener('submit', agregarServicio);
+
+    document.addEventListener('DOMContentLoaded', cargarServicios);
+
+    // Refresco automático: cambios en tiempo real desde Supabase
+    supabase
+      .channel('servicios-negocio')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'servicios', filter: `negocio_id=eq.${negocioId}` },
+        () => cargarServicios()
+      )
+      .subscribe();
+
+    // Refresco automático: señal via localStorage (desde otras pestañas)
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'servicios_updated') {
+        cargarServicios();
+      }
+    });
+  </script>
+</body>
+</html>
