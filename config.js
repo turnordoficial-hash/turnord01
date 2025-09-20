@@ -6,9 +6,9 @@ const Config = {
   getSupabaseConfig() {
     return {
       // URL de tu proyecto Supabase
-      url: 'https://tu-proyecto.supabase.co',
+      url: import.meta.env.SUPABASE_URL,
       // Clave anónima (pública) de tu proyecto Supabase
-      key: 'tu-clave-publica-de-supabase'
+      key: import.meta.env.SUPABASE_ANON_KEY
     };
   },
 

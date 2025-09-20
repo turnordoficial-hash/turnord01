@@ -12,6 +12,9 @@ export default defineConfig({
       '@': resolve(__dirname, 'src'),
     },
   },
+
+  // Prefijo de variables de entorno
+  envPrefix: 'SUPABASE_',
   
   // Configuración del servidor de desarrollo
   server: {
@@ -26,13 +29,13 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        turno: resolve(__dirname, 'turno.html'),
-        panel: resolve(__dirname, 'panel.html'),
-        negocio: resolve(__dirname, 'negocio.html'),
+        turno: resolve(__dirname, 'turno_main.html'),
+        panel: resolve(__dirname, 'panel_main.html'),
+        negocio: resolve(__dirname, 'negocio_main.html'),
         configuracion: resolve(__dirname, 'configuracion.html'),
-        login: resolve(__dirname, 'login.html'),
-        cierre: resolve(__dirname, 'cierre.html'),
-        usuario: resolve(__dirname, 'usuario.html'),
+        login: resolve(__dirname, 'login_main.html'),
+        cierre: resolve(__dirname, 'cierre_main.html'),
+        usuario: resolve(__dirname, 'usuario_main.html'),
       },
     },
   },
