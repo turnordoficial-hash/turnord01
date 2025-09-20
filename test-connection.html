@@ -28,7 +28,7 @@
   </div>
 
   <script type="module">
-    import Config from './config.js';
+    import Config from '/config.js';
     
     // Mostrar la configuración actual (sin mostrar la clave completa por seguridad)
     function displayConfig() {
@@ -95,7 +95,7 @@
       
       try {
         // Importar dinámicamente el script de prueba
-        const { default: testModule } = await import('./test-connection.js');
+        const { default: testModule } = await import('/test-connection.js');
         console.log('Prueba completada.');
       } catch (err) {
         console.error('Error al cargar o ejecutar el script de prueba:', err);

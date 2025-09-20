@@ -10,8 +10,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
   <link rel="manifest" href="./assets/site.webmanifest">
-  <script src="./assets/tailwind.js"></script>
-  <script src="./assets/theme.js"></script>
+  <script src="/assets/tailwind.js"></script>
+  <script src="/assets/theme.js"></script>
   <link rel="stylesheet" href="./assets/styles.css">
   <style>
     .sidebar-link {
@@ -397,9 +397,9 @@
   </div>
 
   <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
-  <script type="module" src="./admin/negocio.js"></script>
+  <script type="module" src="/admin/negocio.js"></script>
   <script type="module">
-    import { supabase } from './database.js';
+    import { supabase } from '/database.js';
     const negocioId = 'barberia006';
     (async () => {
       try {
