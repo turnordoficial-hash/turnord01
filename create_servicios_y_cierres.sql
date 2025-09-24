@@ -60,10 +60,10 @@ CREATE POLICY servicios_update ON public.servicios
 -- Semillas opcionales
 INSERT INTO public.servicios (negocio_id, nombre, duracion_min, precio, activo)
 VALUES
-  ('barberia006', 'Barbería', 30, 0, TRUE),
-  ('barberia006', 'Corte de cabello', 20, 0, TRUE),
-  ('barberia006', 'Afeitado', 15, 0, TRUE),
-  ('barberia006', 'Tratamiento facial', 40, 0, TRUE)
+  ('barberia003', 'Barbería', 30, 0, TRUE),
+  ('barberia003', 'Corte de cabello', 20, 0, TRUE),
+  ('barberia003', 'Afeitado', 15, 0, TRUE),
+  ('barberia003', 'Tratamiento facial', 40, 0, TRUE)
 ON CONFLICT (negocio_id, nombre) DO NOTHING;
 
 -- =============================

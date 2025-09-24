@@ -2,7 +2,7 @@
 
 ## Estructura del Proyecto
 
-Este proyecto ha sido reestructurado para funcionar con el ID de negocio `barberia006`. Los archivos principales son:
+Este proyecto ha sido reestructurado para funcionar con el ID de negocio `barberia003`. Los archivos principales son:
 
 ### Archivos Principales (Main)
 - `index.html` - Página de inicio principal
@@ -27,7 +27,7 @@ Este proyecto ha sido reestructurado para funcionar con el ID de negocio `barber
 - Integración con Supabase
 
 ### ID del Negocio
-Todos los archivos están configurados para funcionar con el ID: `barberia006`
+Todos los archivos están configurados para funcionar con el ID: `barberia003`
 
 ### Navegación
 Todos los enlaces internos han sido actualizados para usar los archivos `_main.html` como archivos principales del sistema.
